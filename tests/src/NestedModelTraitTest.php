@@ -62,9 +62,10 @@ class NestedModelTraitTest extends AbstractTestCase
 
         $table = $cat2->getRecursionTable();
 
-        $expected = 'SELECT Category.*, @row AS _id, (SELECT @row := parentId FROM Category WHERE id = _id), @l := @l + 1 AS lvl FROM Category, (SELECT @row := 1, @l := 0) AS vars WHERE (@row != 0)';
+        $expected = 'SELECT Category.*, @row AS _id, (SELECT @row := parentId FROM Category WHERE id = _id), @l := @l + 1 AS lvl FROM Category, (SELECT @row := ?, @l := 0) AS vars WHERE (@row != ?)';
 
-        $this->assertEquals($expected, $table->humanize());
+        $this->assertEquals($expected, $table->sql());
+        $this->assertEquals([1, 0], $table->getParameters());
     }
 
     /**
