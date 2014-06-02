@@ -19,6 +19,8 @@ install:
 
 before_script:
   - mkdir -p build/logs
+  - mysql -e 'create database `harp-orm/nested`;'
+  - mysql harp-orm/nested < tests/mysql.sql
 
 script:
   - phpunit --coverage-clover build/logs/clover.xml
