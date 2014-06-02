@@ -9,6 +9,11 @@ php:
 before_install:
   - composer selfupdate
 
+notifications:
+  email: false
+  slack:
+    secure: fgJpBlt6npl0WzvChLZw4csfgqS1m9kijeBTMSd6o2WRRnUV9bKK7e6VvABeBb1VWTeS0WEW74v2nodzAPAH+xbgoBNksA1L5ukPl+Q+cxFq8bT63PQZp2FWhL1uwYzpcpIqwnh4GWI6wCRcKXxcZzRu4kTTpshE5zgtjfTQpZc=
+
 install:
   - composer install
 
