@@ -1,0 +1,35 @@
+{
+    "name": "harp-orm/nested",
+    "description": "Adjacency List (parentId column) for Harp ORM",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Ivan Kerin",
+            "email": "ikerin@gmail.com",
+            "role": "Author"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/harp-orm/core"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/harp-orm/query"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "harp-orm/query": "dev-master",
+        "harp-orm/validate": "dev-master",
+        "harp-orm/core": "dev-master",
+        "harp-orm/harp": "dev-master"
+    },
+    "require-dev": {
+        "psr/log": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {"Harp\\Nested\\": "src/"}
+    }
+}
