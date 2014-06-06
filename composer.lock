@@ -11,12 +11,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/harp-orm/core.git",
-                "reference": "d4a6bc523b9953d545dd37d32c3eec2e15855ec7"
+                "reference": "b9e54f78d02057eb184f3c83095be249370e16a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/harp-orm/core/zipball/d4a6bc523b9953d545dd37d32c3eec2e15855ec7",
-                "reference": "d4a6bc523b9953d545dd37d32c3eec2e15855ec7",
+                "url": "https://api.github.com/repos/harp-orm/core/zipball/b9e54f78d02057eb184f3c83095be249370e16a1",
+                "reference": "b9e54f78d02057eb184f3c83095be249370e16a1",
                 "shasum": ""
             },
             "require": {
@@ -25,7 +25,8 @@
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "clippings/env-backup": "~0.2.5"
+                "clippings/env-backup": "~0.2.5",
+                "clippings/phpunit-extensions": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -33,7 +34,6 @@
                     "Harp\\Core\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -41,12 +41,15 @@
                 {
                     "name": "Ivan Kerin",
                     "email": "ikerin@gmail.com",
-                    "homepage": "http://www.openbuildings.com",
                     "role": "Author"
                 }
             ],
             "description": "DataMapper style ORM Core Componenets",
-            "time": "2014-05-31 11:47:47"
+            "support": {
+                "source": "https://github.com/harp-orm/core/tree/master",
+                "issues": "https://github.com/harp-orm/core/issues"
+            },
+            "time": "2014-06-06 11:11:40"
         },
         {
             "name": "harp-orm/harp",
@@ -54,12 +57,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/harp-orm/harp.git",
-                "reference": "b11820b0fb15f964069309c9836ef6108881c2d7"
+                "reference": "c12d20c83dfb027c53489d975c34450397f4d179"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/harp-orm/harp/zipball/b11820b0fb15f964069309c9836ef6108881c2d7",
-                "reference": "b11820b0fb15f964069309c9836ef6108881c2d7",
+                "url": "https://api.github.com/repos/harp-orm/harp/zipball/c12d20c83dfb027c53489d975c34450397f4d179",
+                "reference": "c12d20c83dfb027c53489d975c34450397f4d179",
                 "shasum": ""
             },
             "require": {
@@ -88,7 +91,7 @@
                 }
             ],
             "description": "Light and Flexible ORM without magic",
-            "time": "2014-05-31 11:54:55"
+            "time": "2014-06-06 13:05:15"
         },
         {
             "name": "harp-orm/query",
@@ -96,12 +99,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/harp-orm/query.git",
-                "reference": "079ec822dd28fbd8325b943834a83b237744231e"
+                "reference": "df6e9aff0cda469d3d599a2cfa3b14236d51ae8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/harp-orm/query/zipball/079ec822dd28fbd8325b943834a83b237744231e",
-                "reference": "079ec822dd28fbd8325b943834a83b237744231e",
+                "url": "https://api.github.com/repos/harp-orm/query/zipball/df6e9aff0cda469d3d599a2cfa3b14236d51ae8f",
+                "reference": "df6e9aff0cda469d3d599a2cfa3b14236d51ae8f",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +140,7 @@
                 "source": "https://github.com/harp-orm/query/tree/master",
                 "issues": "https://github.com/harp-orm/query/issues"
             },
-            "time": "2014-06-02 11:00:09"
+            "time": "2014-06-02 15:45:36"
         },
         {
             "name": "harp-orm/util",
