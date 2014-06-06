@@ -10,18 +10,9 @@ class Category extends AbstractRepo
 {
     use NestedRepoTrait;
 
-    private static $instance;
-
-    /**
-     * @return Category
-     */
-    public static function get()
+    public static function newInstance()
     {
-        if (self::$instance === null) {
-            self::$instance = new Category('Harp\Nested\Test\Model\Category');
-        }
-
-        return self::$instance;
+        return new Category('Harp\Nested\Test\Model\Category');
     }
 
     public function initialize()
