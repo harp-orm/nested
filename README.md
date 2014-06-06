@@ -40,6 +40,14 @@ class Category extends AbstractRepo
 
 ```
 
+Required Fields in the database
+-------------------------------
+
+To function properly it requires a ``parentId`` unsigned int in the database table for the model.
+
+Methods
+-------
+
 It will add "parent" and "children" Rels to the repo. The model will get the convenience methods:
 
 - ``getParent``
