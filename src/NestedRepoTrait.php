@@ -13,7 +13,7 @@ trait NestedRepoTrait
 {
     public function initializeNested()
     {
-        $this
+        return $this
             ->addRel(new Rel\BelongsTo('parent', $this, $this))
             ->addRel(new Rel\HasMany('children', $this, $this, ['foreignKey' => 'parentId']));
     }
