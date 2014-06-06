@@ -86,6 +86,5 @@ class NestedModelTraitTest extends AbstractTestCase
 
         $this->assertInstanceOf('Harp\Core\Model\Models', $parents);
         $this->assertCount(0, $parents->toArray());
-
     }
 }
