@@ -4,11 +4,11 @@ namespace Harp\Nested\Test\Model;
 
 use Harp\Harp\AbstractModel;
 use Harp\Nested\Test\Repo;
-use Harp\Nested\NestedModelTrait;
+use Harp\Nested\Model\NestedTrait;
 
 class Category extends AbstractModel
 {
-    use NestedModelTrait;
+    use NestedTrait;
 
     public $id;
     public $name;

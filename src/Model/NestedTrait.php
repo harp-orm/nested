@@ -1,6 +1,6 @@
 <?php
 
-namespace Harp\Nested;
+namespace Harp\Nested\Model;
 
 use Harp\Harp\AbstractModel;
 use Harp\Core\Model\Models;
@@ -11,7 +11,7 @@ use Harp\Query\SQL\SQL;
  * @copyright 2014, Clippings Ltd.
  * @license   http://spdx.org/licenses/BSD-3-Clause
  */
-trait NestedModelTrait
+trait NestedTrait
 {
     public $parentId;
 

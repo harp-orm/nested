@@ -3,12 +3,12 @@
 namespace Harp\Nested\Test\Repo;
 
 use Harp\Harp\AbstractRepo;
-use Harp\Nested\NestedRepoTrait;
+use Harp\Nested\Repo\NestedTrait;
 use Harp\Nested\Test\Model;
 
 class Category extends AbstractRepo
 {
-    use NestedRepoTrait;
+    use NestedTrait;
 
     public static function newInstance()
     {

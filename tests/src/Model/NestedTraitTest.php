@@ -1,11 +1,14 @@
 <?php
 
-namespace Harp\Nested\Test;
+namespace Harp\Nested\Test\Model;
+
+use Harp\Nested\Test\Repo;
+use Harp\Nested\Test\AbstractTestCase;
 
 /**
- * @coversDefaultClass Harp\Nested\NestedModelTrait
+ * @coversDefaultClass Harp\Nested\Model\NestedTrait
  */
-class NestedModelTraitTest extends AbstractTestCase
+class NestedTraitTest extends AbstractTestCase
 {
     /**
      * @covers ::getParent
