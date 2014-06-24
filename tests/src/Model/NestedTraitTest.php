@@ -2,7 +2,7 @@
 
 namespace Harp\Nested\Test\Model;
 
-use Harp\Nested\Test\Repo;
+use Harp\Nested\Test\Model\Category;
 use Harp\Nested\Test\AbstractTestCase;
 
 /**
@@ -16,9 +16,9 @@ class NestedTraitTest extends AbstractTestCase
      */
     public function testParent()
     {
-        $cat1 = Repo\Category::get()->find(1);
-        $cat2 = Repo\Category::get()->find(3);
-        $cat3 = Repo\Category::get()->find(4);
+        $cat1 = Category::find(1);
+        $cat2 = Category::find(3);
+        $cat3 = Category::find(4);
 
         $this->assertTrue($cat1->getParent()->isVoid());
         $this->assertFalse($cat2->isRoot());
@@ -33,8 +33,8 @@ class NestedTraitTest extends AbstractTestCase
      */
     public function testSetParent()
     {
-        $cat1 = Repo\Category::get()->find(1);
-        $cat3 = Repo\Category::get()->find(4);
+        $cat1 = Category::find(1);
+        $cat3 = Category::find(4);
 
         $cat3->setParent($cat1);
 
@@ -48,9 +48,9 @@ class NestedTraitTest extends AbstractTestCase
      */
     public function testChildren()
     {
-        $cat1 = Repo\Category::get()->find(1);
-        $cat2 = Repo\Category::get()->find(2);
-        $cat3 = Repo\Category::get()->find(3);
+        $cat1 = Category::find(1);
+        $cat2 = Category::find(2);
+        $cat3 = Category::find(3);
 
         $this->assertInstanceOf('Harp\Core\Repo\LinkMany', $cat1->getChildren());
         $this->assertSame([$cat2, $cat3], $cat1->getChildren()->toArray());
@@ -61,7 +61,7 @@ class NestedTraitTest extends AbstractTestCase
      */
     public function testGetRecursionTable()
     {
-        $cat2 = Repo\Category::get()->find(2);
+        $cat2 = Category::find(2);
 
         $table = $cat2->getRecursionTable();
 
@@ -76,9 +76,9 @@ class NestedTraitTest extends AbstractTestCase
      */
     public function testGetParents()
     {
-        $cat1 = Repo\Category::get()->find(1);
-        $cat2 = Repo\Category::get()->find(3);
-        $cat3 = Repo\Category::get()->find(4);
+        $cat1 = Category::find(1);
+        $cat2 = Category::find(3);
+        $cat3 = Category::find(4);
 
         $parents = $cat3->getParents();
 
