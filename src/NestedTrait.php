@@ -1,6 +1,6 @@
 <?php
 
-namespace Harp\Nested\Model;
+namespace Harp\Nested;
 
 use Harp\Harp\AbstractModel;
 use Harp\Core\Model\Models;

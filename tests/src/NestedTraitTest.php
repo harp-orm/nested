@@ -1,12 +1,9 @@
 <?php
 
-namespace Harp\Nested\Test\Model;
-
-use Harp\Nested\Test\Model\Category;
-use Harp\Nested\Test\AbstractTestCase;
+namespace Harp\Nested\Test;
 
 /**
- * @coversDefaultClass Harp\Nested\Model\NestedTrait
+ * @coversDefaultClass Harp\Nested\NestedTrait
  */
 class NestedTraitTest extends AbstractTestCase
 {

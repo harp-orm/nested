@@ -1,6 +1,6 @@
 <?php
 
-namespace Harp\Nested\Repo;
+namespace Harp\Nested;
 
 use Harp\Harp\Rel;
 
@@ -9,7 +9,7 @@ use Harp\Harp\Rel;
  * @copyright 2014, Clippings Ltd.
  * @license   http://spdx.org/licenses/BSD-3-Clause
  */
-trait NestedTrait
+trait NestedRepoTrait
 {
     public function initializeNested()
     {

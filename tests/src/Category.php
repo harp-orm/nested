@@ -1,13 +1,13 @@
 <?php
 
-namespace Harp\Nested\Test\Model;
+namespace Harp\Nested\Test;
 
 use Harp\Harp\AbstractModel;
-use Harp\Nested\Model\NestedTrait;
+use Harp\Nested\NestedTrait;
 
 class Category extends AbstractModel
 {
-    const REPO = 'Harp\Nested\Test\Repo\Category';
+    const REPO = 'Harp\Nested\Test\CategoryRepo';
 
     use NestedTrait;
 
