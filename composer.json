@@ -21,8 +21,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "harp-orm/core": "dev-master",
-        "harp-orm/harp": "dev-master"
+        "harp-orm/harp": "0.1.0"
     },
     "require-dev": {
         "psr/log": "~1.0"
