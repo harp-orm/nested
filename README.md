@@ -11,15 +11,15 @@ Adjacency List (parentId column) for Harp ORM
 Usage
 -----
 
-Add the Traits to your models / Repos
+Add the Traits to your Model / Repo
 
 ```php
 // Model Class
-use Harp\Nested\NestedModelTrait;
+use Harp\Nested\NestedTrait;
 
 class Category extends AbstractModel
 {
-    use NestedModelTrait;
+    use NestedTrait;
 }
 
 // Repo Class
@@ -40,21 +40,32 @@ class Category extends AbstractRepo
 
 ```
 
-Required Fields in the database
--------------------------------
+__Database Table:__
 
-To function properly it requires a ``parentId`` unsigned int in the database table for the model.
+```
+┌─────────────────────────┐
+│ Table: Category         │
+├─────────────┬───────────┤
+│ id          │ ingeter   │
+│ name        │ string    │
+│ parentId*   │ integer   │
+└─────────────┴───────────┘
+* Required fields
+```
 
 Methods
 -------
 
 It will add "parent" and "children" Rels to the repo. The model will get the convenience methods:
 
-- ``getParent``
-- ``setParent``
-- ``getChildren``
-- ``getParents``
-- ``isRoot``
+Method                                    | Description
+------------------------------------------|--------------------------------------------------
+__getParent__()                           | Return the parent model
+__setParent__(AbstractModel $parent)      | Set the parent model
+__getChildren__()                         | Get immidiate children. Returns a Models object
+__isRoot__()                              | Boolean check if it is root (has parent) or not
+__getParents__()                          | Return all the parents, including root. Models object
+
 
 License
 -------
