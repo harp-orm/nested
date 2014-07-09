@@ -12,9 +12,12 @@ use Harp\Nested\NestedTrait;
  */
 class Category extends AbstractModel
 {
-    const REPO = 'Harp\Nested\Test\CategoryRepo';
-
     use NestedTrait;
+
+    public static function initialize($repo)
+    {
+        NestedTrait::initialize($repo);
+    }
 
     public $id;
     public $name;

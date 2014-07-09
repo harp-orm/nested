@@ -3,6 +3,7 @@
 namespace Harp\Nested\Test;
 
 use Harp\Query\DB;
+use Harp\Core\Repo\Container;
 use PHPUnit_Framework_TestCase;
 
 /**
@@ -38,6 +39,8 @@ abstract class AbstractTestCase extends PHPUnit_Framework_TestCase {
 
         DB::get()->setLogger($this->logger);
         DB::get()->beginTransaction();
+
+        Container::clear();
     }
 
     public function tearDown()

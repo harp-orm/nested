@@ -9,19 +9,9 @@
             "role": "Author"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/harp-orm/core"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/harp-orm/harp"
-        }
-    ],
     "require": {
         "php": ">=5.4.0",
-        "harp-orm/harp": "~0.1.0"
+        "harp-orm/harp": "~0.2.0"
     },
     "require-dev": {
         "psr/log": "~1.0"

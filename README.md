@@ -20,18 +20,10 @@ use Harp\Nested\NestedTrait;
 class Category extends AbstractModel
 {
     use NestedTrait;
-}
 
-// Repo Class
-use Harp\Nested\NestedRepoTrait;
-
-class Category extends AbstractRepo
-{
-    use NestedRepoTrait;
-
-    public function initialize()
+    public static function initialize($repo)
     {
-        $this->initializeNested();
+        NestedTrait::initialize($repo);
 
         // Other initializations
         // ...

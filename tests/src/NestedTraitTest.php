@@ -12,6 +12,17 @@ namespace Harp\Nested\Test;
 class NestedTraitTest extends AbstractTestCase
 {
     /**
+     * @covers ::initialize
+     */
+    public function testInitialize()
+    {
+        $repo = Category::getRepo();
+
+        $this->assertInstanceOf('Harp\Harp\Rel\BelongsTo', $repo->getRel('parent'));
+        $this->assertInstanceOf('Harp\Harp\Rel\HasMany', $repo->getRel('children'));
+    }
+
+    /**
      * @covers ::getParent
      * @covers ::isRoot
      */

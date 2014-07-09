@@ -3,8 +3,10 @@
 namespace Harp\Nested;
 
 use Harp\Harp\AbstractModel;
+use Harp\Harp\Repo;
 use Harp\Core\Model\Models;
 use Harp\Query\SQL\SQL;
+use Harp\Harp\Rel;
 
 /**
  * @author    Ivan Kerin <ikerin@gmail.com>
@@ -13,6 +15,13 @@ use Harp\Query\SQL\SQL;
  */
 trait NestedTrait
 {
+    public static function initialize(Repo $repo)
+    {
+        $repo
+            ->addRel(new Rel\BelongsTo('parent', $repo, $repo))
+            ->addRel(new Rel\HasMany('children', $repo, $repo, ['foreignKey' => 'parentId']));
+    }
+
     public $parentId;
 
     /**
@@ -20,7 +29,7 @@ trait NestedTrait
      */
     public function getParent()
     {
-        return $this->getRepo()->loadLink($this, 'parent')->get();
+        return $this->get('parent');
     }
 
     /**
@@ -28,7 +37,7 @@ trait NestedTrait
      */
     public function setParent(AbstractModel $parent)
     {
-        $this->getRepo()->loadLink($this, 'parent')->set($parent);
+        $this->set('parent', $parent);
 
         return $this;
     }
@@ -38,7 +47,7 @@ trait NestedTrait
      */
     public function getChildren()
     {
-        return $this->getRepo()->loadLink($this, 'children');
+        return $this->all('children');
     }
 
     /**
@@ -54,9 +63,9 @@ trait NestedTrait
      */
     public function getRecursionTable()
     {
-        $repo = $this->getRepo();
+        $repo = static::getRepo();
 
-        return $repo->selectAll()
+        return static::selectAll()
             ->column('@row', '_id')
             ->column("(SELECT @row := parentId FROM {$repo->getTable()} WHERE {$repo->getPrimaryKey()} = _id)")
             ->column('@l := @l + 1', 'lvl')
@@ -72,9 +81,9 @@ trait NestedTrait
         if (empty($this->parentId)) {
             return new Models();
         } else {
-            $repo = $this->getRepo();
+            $repo = static::getRepo();
 
-            return $repo->findAll()
+            return static::findAll()
                 ->joinAliased(
                     $this->getRecursionTable(),
                     'RecursionTable',
