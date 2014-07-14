@@ -14,9 +14,9 @@ class Category extends AbstractModel
 {
     use NestedTrait;
 
-    public static function initialize($repo)
+    public static function initialize($config)
     {
-        NestedTrait::initialize($repo);
+        NestedTrait::initialize($config);
     }
 
     public $id;

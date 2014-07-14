@@ -3,7 +3,7 @@
 namespace Harp\Nested\Test;
 
 use Harp\Query\DB;
-use Harp\Core\Repo\Container;
+use Harp\Harp\Repo\Container;
 use PHPUnit_Framework_TestCase;
 
 /**

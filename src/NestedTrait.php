@@ -3,8 +3,8 @@
 namespace Harp\Nested;
 
 use Harp\Harp\AbstractModel;
-use Harp\Harp\Repo;
-use Harp\Core\Model\Models;
+use Harp\Harp\Config;
+use Harp\Harp\Model\Models;
 use Harp\Query\SQL\SQL;
 use Harp\Harp\Rel;
 
@@ -15,11 +15,13 @@ use Harp\Harp\Rel;
  */
 trait NestedTrait
 {
-    public static function initialize(Repo $repo)
+    public static function initialize(Config $config)
     {
-        $repo
-            ->addRel(new Rel\BelongsTo('parent', $repo, $repo))
-            ->addRel(new Rel\HasMany('children', $repo, $repo, ['foreignKey' => 'parentId']));
+        $class = $config->getModelClass();
+
+        $config
+            ->addRel(new Rel\BelongsTo('parent', $config, $class::getRepo()))
+            ->addRel(new Rel\HasMany('children', $config, $class::getRepo(), ['foreignKey' => 'parentId']));
     }
 
     public $parentId;

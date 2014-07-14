@@ -64,7 +64,7 @@ class NestedTraitTest extends AbstractTestCase
         $cat2 = Category::find(2);
         $cat3 = Category::find(3);
 
-        $this->assertInstanceOf('Harp\Core\Repo\LinkMany', $cat1->getChildren());
+        $this->assertInstanceOf('Harp\Harp\Repo\LinkMany', $cat1->getChildren());
         $this->assertSame([$cat2, $cat3], $cat1->getChildren()->toArray());
     }
 
@@ -94,12 +94,12 @@ class NestedTraitTest extends AbstractTestCase
 
         $parents = $cat3->getParents();
 
-        $this->assertInstanceOf('Harp\Core\Model\Models', $parents);
+        $this->assertInstanceOf('Harp\Harp\Model\Models', $parents);
         $this->assertSame([$cat1, $cat2], $parents->toArray());
 
         $parents = $cat1->getParents();
 
-        $this->assertInstanceOf('Harp\Core\Model\Models', $parents);
+        $this->assertInstanceOf('Harp\Harp\Model\Models', $parents);
         $this->assertCount(0, $parents->toArray());
     }
 }

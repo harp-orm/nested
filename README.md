@@ -11,7 +11,7 @@ Adjacency List (parentId column) for Harp ORM
 Usage
 -----
 
-Add the Traits to your Model / Repo
+Add the Trait to your Model
 
 ```php
 // Model Class
@@ -21,9 +21,9 @@ class Category extends AbstractModel
 {
     use NestedTrait;
 
-    public static function initialize($repo)
+    public static function initialize($config)
     {
-        NestedTrait::initialize($repo);
+        NestedTrait::initialize($config);
 
         // Other initializations
         // ...
