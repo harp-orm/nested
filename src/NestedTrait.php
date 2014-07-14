@@ -15,6 +15,25 @@ use Harp\Harp\Rel;
  */
 trait NestedTrait
 {
+    /**
+     * @param  string $name
+     * @return AbstractModel
+     */
+    abstract public function get($name);
+
+    /**
+     * @param string        $name
+     * @param AbstractModel $model
+     * @return AbstractModel
+     */
+    abstract public function set($name, AbstractModel $model);
+
+    /**
+     * @param  string $name
+     * @return \Harp\Harp\Repo\LinkMany
+     */
+    abstract public function all($name);
+
     public static function initialize(Config $config)
     {
         $class = $config->getModelClass();
