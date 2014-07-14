@@ -9,6 +9,9 @@ use Harp\Query\SQL\SQL;
 use Harp\Harp\Rel;
 
 /**
+ * Adds ability to "nest" instances of the same model, creating a hierarchical structure.
+ * Adds 'parent' and 'children' rels
+ *
  * @author    Ivan Kerin <ikerin@gmail.com>
  * @copyright 2014, Clippings Ltd.
  * @license   http://spdx.org/licenses/BSD-3-Clause
@@ -34,6 +37,11 @@ trait NestedTrait
      */
     abstract public function all($name);
 
+    /**
+     * Add 'parent' and 'children' rels
+     *
+     * @param  Config $config
+     */
     public static function initialize(Config $config)
     {
         $class = $config->getModelClass();
